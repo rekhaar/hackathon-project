@@ -1,7 +1,8 @@
-package main.java.com.abc.app.mortgage.controller;
+package com.abc.app.mortgage.controller;
 
-import main.java.com.abc.app.mortgage.model.Account;
-import main.java.com.abc.app.mortgage.service.AccountService;
+
+import com.abc.app.mortgage.model.Account;
+import com.abc.app.mortgage.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AccountController {
+
     @Autowired
     private AccountService accountService;
 
