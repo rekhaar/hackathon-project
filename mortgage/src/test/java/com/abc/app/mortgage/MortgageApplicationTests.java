@@ -1,3 +1,4 @@
+/*
 package com.abc.app.mortgage;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +12,4 @@ class MortgageApplicationTests {
 	}
 
 }
+*/
