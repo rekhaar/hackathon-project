@@ -9,8 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class AccountService {
+
+    private final AccountRepository repository;
+
     @Autowired
-    AccountRepository repository;
+    public AccountService(AccountRepository repository) {
+        this.repository = repository;
+    }
     public List<AccountResponse> getAccountsByUserId(AccountRequest accountRequest) throws AccountNotFoundForThisUser {
         List<Account> accountList = repository.findByUser_UserId(accountRequest.getUserId());
         if(accountList.isEmpty()){

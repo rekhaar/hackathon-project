@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
-public class AccountServiceTest {
+class AccountServiceTest {
 
     @Mock
     private AccountRepository accountRepository;
@@ -30,7 +30,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void testGetAccountsByUserId_WhenAccountsExist() throws AccountNotFoundForThisUser {
+    void testGetAccountsByUserId_WhenAccountsExist() throws AccountNotFoundForThisUser {
         AccountRequest accountRequest = new AccountRequest();
         accountRequest.setUserId("usr123");
 
@@ -57,7 +57,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void testGetAccountsByUserId_WhenNoAccountsExist() {
+    void testGetAccountsByUserId_WhenNoAccountsExist() {
         AccountRequest accountRequest = new AccountRequest();
         accountRequest.setUserId("usr123");
         Mockito.when(accountRepository.findByUser_UserId(accountRequest.getUserId()))
@@ -69,7 +69,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void testGetAccountsByUserId_WhenUserIdIsNull() throws AccountNotFoundForThisUser {
+    void testGetAccountsByUserId_WhenUserIdIsNull() {
         AccountRequest accountRequest = new AccountRequest();
         accountRequest.setUserId(null);
         Mockito.when(accountRepository.findByUser_UserId(accountRequest.getUserId()))
