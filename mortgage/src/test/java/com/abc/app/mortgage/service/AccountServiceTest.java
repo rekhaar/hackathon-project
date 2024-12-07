@@ -65,7 +65,7 @@ class AccountServiceTest {
         AccountNotFoundForThisUser exception = assertThrows(AccountNotFoundForThisUser.class, () -> {
             accountService.getAccountsByUserId(accountRequest);
         });
-        assertEquals("Employee not found with id usr123", exception.getMessage());
+        assertEquals("Account not found with id usr123", exception.getMessage());
     }
 
     @Test
@@ -78,6 +78,6 @@ class AccountServiceTest {
             accountService.getAccountsByUserId(accountRequest);
         });
 
-        assertEquals("Employee not found with id null", exception.getMessage());
+        assertEquals("Account not found with id null", exception.getMessage());
     }
 }

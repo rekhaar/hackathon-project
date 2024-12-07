@@ -19,7 +19,7 @@ public class AccountService {
     public List<AccountResponse> getAccountsByUserId(AccountRequest accountRequest) throws AccountNotFoundForThisUser {
         List<Account> accountList = repository.findByUser_UserId(accountRequest.getUserId());
         if(accountList.isEmpty()){
-            throw new AccountNotFoundForThisUser("Employee not found with id " + accountRequest.getUserId());
+            throw new AccountNotFoundForThisUser("Account not found with id " + accountRequest.getUserId());
         }
         return accountList.stream().map(i-> AccountResponse.build(i.getAccountId() , i.getAccountName(),
                 i.getBalanceAmount(),i.getUpdatedDate())).toList();
